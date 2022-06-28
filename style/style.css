@@ -1,0 +1,82 @@
+* {
+    height: auto;
+}
+html,
+body,
+#container {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.dg-customization__marker .dg-customization__marker_type_mushroom .leaflet-zoom-animated .leaflet-interactive .dg-customization__marker_disappear {
+    background: rgb(238, 238, 238) !important;
+}
+
+.leaflet-popup-content-wrapper{
+    background: rgb(238, 238, 238) !important;
+    height: auto;
+    max-height: 600px !important;
+}
+
+
+.popup-sula {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    display: flex;
+    flex-direction: column;
+    
+    min-width: 200px;
+}
+.popup-content {
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgba(38, 38, 38, 0.2);
+}
+.popup-tip {
+    width: 0;
+    height: 0;
+    background: #fff;
+    align-self: center;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #fff;
+}
+
+.orgPopup {
+    color: black;
+}
+
+.orgPropsText {
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+.orgProps {
+    display: grid;
+}
+
+.orgProps a {
+    text-decoration: none;
+    color: rgb(24, 97, 194);
+    font-weight: 600;
+    margin: auto;
+}
+
+.orgPropsGorpit {
+    font-size: 12px;
+}
+
+.orgPropsContainer {
+    display: flex;
+}
+
+.orgProps div {
+    margin: 5px;
+}
+
+.orgProps img {
+    width: 50px;
+    height: 50px;
+}

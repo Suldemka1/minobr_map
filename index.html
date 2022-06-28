@@ -5,23 +5,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <script src="https://yastatic.net/jquery/2.2.3/jquery.min.js"></script>
     <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
     <script src="https://unpkg.com/@2gis/mapgl-clusterer@^2/dist/clustering.js"></script>
+    <script src="https://maps.api.2gis.ru/2.0/cluster_realworld.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/data.js"></script>
+    <script src="script/schooldata.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-    <script src="https://maps.api.2gis.ru/2.0/cluster_realworld.js"></script>
-    <script src="script.js"></script>
-    <script src="data.js"></script>
-    <script src="schooldata.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/spoiler.css">
 </head>
 
-<body>
-    <div id="map" style="width:1000px; height:650px"></div>
+<body style="display: grid; grid-template-columns: 7fr 3fr;">
+    <div id="map" style="width:100%; height:100%"></div>
 
-    <script>
-    </script>
+    <div>
+        <fieldset>
+            <legend>Тип учреждения</legend>
+
+            <div>
+                <input type="checkbox" id="horns" name="horns">
+                <label for="horns">Подведомственная организация</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="horns" name="horns">
+                <label for="horns">Среднее специальное образовательное учреждения</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="horns" name="horns">
+                <label for="horns">Центр допольнительного образования</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="scales" name="scales" checked>
+                <label for="scales">Школа</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="horns" name="horns">
+                <label for="horns">Детский сад</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>По программам</legend>
+
+            <div>
+                <input type="checkbox" id="horns" name="horns">
+                <label for="horns">Точка роста</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="horns" name="horns">
+                <label for="horns">Цифровая образовательная среда</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="horns" name="horns">
+                <label for="horns">Кванториум</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="scales" name="scales" checked>
+                <label for="scales">it-куб</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="horns" name="horns">
+                <label for="horns">Мастерския</label>
+            </div>
+        </fieldset>
+    </div>
+
 </body>
 
 </html>
