@@ -1,0 +1,28 @@
+{
+  "name": "minobr_map",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "main": "script.js",
+  "dependencies": {
+    "@2gis/mapgl-clusterer": "^2.4.3",
+    "2gis-maps": "^3.7.1",
+    "asynckit": "^0.4.0",
+    "axios": "^0.27.2",
+    "babel": "^6.23.0",
+    "combined-stream": "^1.0.8",
+    "delayed-stream": "^1.0.0",
+    "express": "^4.18.1",
+    "follow-redirects": "^1.15.0",
+    "form-data": "^4.0.0",
+    "mime-db": "^1.52.0",
+    "mime-types": "^2.1.35"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node script.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
