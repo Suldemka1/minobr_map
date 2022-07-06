@@ -2,7 +2,7 @@ function orgInit(type, markerLayer, variable) {
     for (let i = 0; i < orgdata.length; i++) {
         let orgProp = []                                // обнуление параметров маркера
 
-        if (orgdata[i][type] == type) {
+        if (orgdata[i].type == type) {
 
             marker = DG.marker([orgdata[i].k1, orgdata[i].k2], {
                 title: orgdata[i].name          //заголовок маркера
@@ -210,7 +210,6 @@ function FilterByProperty(propName, markerLayer, variable) {
             variable.removeFrom(markerLayer)
             variable.clearLayers()
         }
-
     }
 }
 
