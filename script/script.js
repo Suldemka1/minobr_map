@@ -30,38 +30,6 @@ DG.then(function () {
         zoomControl: false
     });
 
-    // var obj = {
-    //     onAddToMap: function (map) {
-    //         var container = this.getContainer();
-
-    //         // Создание вложенных элементов: 
-    //         var controlMove = document.createElement('DIV');
-    //         controlMove.id = container.id + '_controlMove';
-    //         controlMove.style.backgroundColor = 'white';
-    //         controlMove.style.cursor = 'pointer';
-    //         controlMove.innerHTML = 'Moscow';
-    //         container.appendChild(controlMove);
-
-    //         // Подписка на событие элемента управления: 
-    //         this.observers.push(this.getDgMap().addEventListener(controlMove.id, 'DgClick', function () { myMap.setCenter(new DG.GeoPoint(37.609, 55.753)); }));
-    //     },
-
-    //     onRemoveOnMap: function () {
-
-    //     },
-
-    //     getStates: function () {
-
-    //     }
-    // }
-
-    // let MyControl = DG.Controls.Abstract.extend(obj);
-
-    // // Создаем объект элемента управления:
-    // let Trosta = new MyControl();
-    // // Добавляем элемент управления на карту:
-    // map.controls.add(Trosta);
-
     DG.geoJson(data,                                            // слой с границами кожуунов
         { color: '#ff0522', fillColor: '#708dff', fillOpacity: 0.2, stroke: 'red', weight: 1, opacity: 0.3 }).addTo(map)
 
