@@ -81,6 +81,11 @@ body,
     display: flex;
 }
 
+.orgPropsMastery {
+    display: flex;
+    flex-direction: column;
+}
+
 .orgProps div {
     margin: 5px;
 }

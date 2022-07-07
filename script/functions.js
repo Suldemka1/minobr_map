@@ -34,7 +34,7 @@ function orgInit(type, markerLayer, variable) {
             }
 
             if (orgdata[i].masterskaya) {
-                orgProp.push(`<div class="orgPropsContainer"><div class="orgPropsText">В этом учебном заведении есть мастерская</div>${orgdata[i].masterskaya}</div>`)
+                orgProp.push(`<div class="orgPropsMastery"><div class="orgPropsText">В этом учебном заведении есть мастерская</div>${orgdata[i].masterskaya}</div>`)
             }
             else {
                 orgProp.push('')
@@ -93,7 +93,7 @@ function propInit(propName, markerLayer, variable) {
         if (orgdata[i][propName]) {
 
             marker = DG.marker([orgdata[i].k1, orgdata[i].k2], {
-                title: orgdata[i].name          //заголовок маркера
+                title: orgdata[i].name                  //заголовок маркера
             })
 
             if (orgdata[i].trosta) {
@@ -122,7 +122,7 @@ function propInit(propName, markerLayer, variable) {
             }
 
             if (orgdata[i].masterskaya) {
-                orgProp.push(`<div class="orgPropsContainer"><div class="orgPropsText">В этом учебном заведении есть мастерская</div>${orgdata[i].masterskaya}</div>`)
+                orgProp.push(`<div class="orgPropsMastery"><div class="orgPropsText">В этом учебном заведении есть мастерская</div>${orgdata[i].masterskaya}</div>`)
             }
             else {
                 orgProp.push('')
@@ -206,7 +206,7 @@ function removeByType(orgType, markerLayer) {
                     itcube.removeFrom(markerLayer)
                     itcube.clearLayers()
                     break
-                case ' masterskaya':
+                case 'masterskaya':
                     masterskaya.removeFrom(markerLayer)
                     masterskaya.clearLayers()
                     break
@@ -238,14 +238,15 @@ function removeByPropName(propName, markerLayer) {
                     kvant.removeFrom(markerLayer)
                     kvant.clearLayers()
                     break
+                case 'masterskaya':
+                    masterskaya.removeFrom(markerLayer)
+                    masterskaya.clearLayers()
+                    break
                 case 'itcube':
                     itcube.removeFrom(markerLayer)
                     itcube.clearLayers()
                     break
-                case ' masterskaya':
-                    masterskaya.removeFrom(markerLayer)
-                    masterskaya.clearLayers()
-                    break
+
             }
         }
     }
@@ -270,6 +271,12 @@ function FilterByType(type, markerLayer, variable) {                            
             removeByType('school', markers)
             removeByType('dop', markers)
             removeByType('dou', markers)
+
+            removeByPropName('trosta', markers)
+            removeByPropName('scoc', markers)
+            removeByPropName('kvant', markers)
+            removeByPropName('itcube', markers)
+            removeByPropName('masterskaya', markers)
 
             markerInit(type, markerLayer, variable)
             markerLayer.addLayer(variable)
@@ -355,14 +362,4 @@ function iconInit() {
         iconUrl: 'assets/icon.png',
         iconSize: [70, 70]
     })
-}
-
-function deleteDouble() {
-    for (let i = 0; i < orgdata.length; i++) {
-        for (let j = 0; i < orgdata.length; j++) {
-            if (orgdata[i].k1 == orgdata[j].k1 && orgdata[i].k2 == orgdata[j].k2) {
-                console.log('duble  ' + orgdata[i].name + '  ' + orgdata[j].name)
-            }
-        }
-    }
 }
