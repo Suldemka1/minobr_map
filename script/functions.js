@@ -174,6 +174,83 @@ function propInit(propName, markerLayer, variable) {
     markerLayer.addLayer(variable)
 }
 
+function removeByTypeOrg(markerLayer, variable) {
+    variable.removeFrom(markerLayer)
+    variable.clearLayers()
+}
+
+function removeByType(orgType, markerLayer) {
+    var uncheck = document.getElementsByClassName('byPropName');
+    var prop = document.getElementById(orgType)
+
+    for (var i = 0; i < uncheck.length; i++) {
+        if (uncheck[i].id != prop.id) {
+            if (uncheck[i].type == 'checkbox') {
+                uncheck[i].checked = false
+            }
+
+            switch (uncheck[i].id) {
+                case 'trosta':
+                    trosta.removeFrom(markerLayer)
+                    trosta.clearLayers()
+                    break
+                case 'scoc':
+                    scoc.removeFrom(markerLayer)
+                    scoc.clearLayers()
+                    break
+                case 'kvant':
+                    kvant.removeFrom(markerLayer)
+                    kvant.clearLayers()
+                    break
+                case 'itcube':
+                    itcube.removeFrom(markerLayer)
+                    itcube.clearLayers()
+                    break
+                case ' masterskaya':
+                    masterskaya.removeFrom(markerLayer)
+                    masterskaya.clearLayers()
+                    break
+            }
+        }
+    }
+}
+
+function removeByPropName(propName, markerLayer) {
+    var uncheck = document.getElementsByClassName('byPropName');
+    var prop = document.getElementById(propName)
+
+    for (var i = 0; i < uncheck.length; i++) {
+        if (uncheck[i].id != prop.id) {
+            if (uncheck[i].type == 'checkbox') {
+                uncheck[i].checked = false
+            }
+
+            switch (uncheck[i].id) {
+                case 'trosta':
+                    trosta.removeFrom(markerLayer)
+                    trosta.clearLayers()
+                    break
+                case 'scoc':
+                    scoc.removeFrom(markerLayer)
+                    scoc.clearLayers()
+                    break
+                case 'kvant':
+                    kvant.removeFrom(markerLayer)
+                    kvant.clearLayers()
+                    break
+                case 'itcube':
+                    itcube.removeFrom(markerLayer)
+                    itcube.clearLayers()
+                    break
+                case ' masterskaya':
+                    masterskaya.removeFrom(markerLayer)
+                    masterskaya.clearLayers()
+                    break
+            }
+        }
+    }
+}
+
 function markerInit(type, markerLayer, variable) {                                  // функция инициализации маркеров
     if (document.getElementById(type).checked == true) {
         orgInit(type, markerLayer, variable)
@@ -185,6 +262,15 @@ function FilterByType(type, markerLayer, variable) {           // добавле
     document.getElementById(type).onchange = function () {
 
         if (this.checked) {
+
+            uncheckPropFilter()
+
+            removeByType('podved', markers)
+            removeByType('spo', markers)
+            removeByType('school', markers)
+            removeByType('dop', markers)
+            removeByType('dou', markers)
+
             markerInit(type, markerLayer, variable)
             markerLayer.addLayer(variable)
         }
@@ -193,7 +279,6 @@ function FilterByType(type, markerLayer, variable) {           // добавле
             variable.removeFrom(markerLayer)
             variable.clearLayers()
         }
-        console.log(this.checked)
     }
 }
 
@@ -202,6 +287,17 @@ function FilterByProperty(propName, markerLayer, variable) {
     document.getElementById(propName).onchange = function () {
 
         if (this.checked) {
+
+            uncheckTypeFilter()
+
+            removeByTypeOrg(markers, podved)
+            removeByTypeOrg(markers, spo)
+            removeByTypeOrg(markers, school)
+            removeByTypeOrg(markers, dou)
+            removeByTypeOrg(markers, dop)
+
+            removeByPropName(propName, markerLayer)
+
             propInit(propName, markerLayer, variable)
             markerLayer.addLayer(variable)
         }
@@ -213,21 +309,31 @@ function FilterByProperty(propName, markerLayer, variable) {
     }
 }
 
-// function uncheck(propName) {
+function uncheckTypeFilter(propName) {                              // переключение checked у всех byOrgType
 
-//     var uncheck = document.getElementsByTagName('input');
-//     var prop = document.getElementById(propName)
+    var uncheck = document.getElementsByClassName('byOrgType');
+    var prop = document.getElementById(propName)
 
-//     for (var i = 0; i < uncheck.length; i++) {
+    for (var i = 0; i < uncheck.length; i++) {
 
-//         if (uncheck[i].type == 'checkbox') {
-//             uncheck[i].checked = false
-//         }
+        if (uncheck[i].type == 'checkbox' && uncheck != prop) {
+            uncheck[i].checked = false
+        }
+    }
+}
 
-//     }
+function uncheckPropFilter(propName) {                              // переключение checked у всех byPropName
 
-//     prop.setAttribute('checked', 'true')
-// }
+    var uncheck = document.getElementsByClassName('byPropName');
+    var prop = document.getElementById(propName)
+
+    for (var i = 0; i < uncheck.length; i++) {
+
+        if (uncheck[i].type == 'checkbox' && uncheck != prop) {
+            uncheck[i].checked = false
+        }
+    }
+}
 
 function iconInit() {
     trostaIcon = DG.icon({

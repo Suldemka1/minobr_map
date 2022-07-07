@@ -47,12 +47,10 @@ DG.then(function () {
     FilterByType('dou', markers, dou)
     FilterByType('podved', markers, podved)
 
-    // FilterByProperty('trosta', markers, trosta)
-    // FilterByProperty('scoc', markers, scoc)
-    // FilterByProperty('kvant', markers, kvant)
-    // FilterByProperty('itcube', markers, itcube)
-    // FilterByProperty('masterskaya', markers, masterskaya)
-
-    console.log(markers.getId())
+    FilterByProperty('trosta', markers, trosta)
+    FilterByProperty('scoc', markers, scoc)
+    FilterByProperty('kvant', markers, kvant)
+    FilterByProperty('itcube', markers, itcube)
+    FilterByProperty('masterskaya', markers, masterskaya)
 
 });

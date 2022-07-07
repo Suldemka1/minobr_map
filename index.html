@@ -21,69 +21,104 @@
   <body style="display: grid; grid-template-columns: 7fr 3fr">
     <div id="map" style="width: 100%; height: 100%"></div>
 
-    <div>
+    <div class="filter">
       <fieldset>
         <legend>Тип учреждения</legend>
 
-        <div>
-          <input type="checkbox" id="podved" name="podved" value="" />
-          <label for="horns">Подведомственная организация</label>
-        </div>
+        <label class="checkbox-ios">
+          <input type="checkbox"
+            id="podved"
+            name="podved"
+            value=""
+            class="byOrgType"
+          />
+          <span class="checkbox-ios-switch"></span>
+          <label for="podved">Подведомственная организация</label>
+        </label>
 
-        <div>
-          <input type="checkbox" id="spo" name="spo" />
-          <label for="horns"
+        <label class="checkbox-ios">
+          <input type="checkbox" id="spo" name="spo" class="byOrgType" />
+          <span class="checkbox-ios-switch"></span>
+          <label for="podved"
             >Среднее специальное образовательное учреждения</label
           >
-        </div>
+        </label>
 
-        <div>
-          <input type="checkbox" id="dop" name="dop" />
-          <label for="horns">Центр допольнительного образования</label>
-        </div>
+        <label class="checkbox-ios">
+          <input type="checkbox" id="dop" name="dop" class="byOrgType" />
+          <span class="checkbox-ios-switch"></span>
+          <label for="podved">Центр допольнительного образования</label>
+        </label>
 
-        <div>
-          <input type="checkbox" id="school" name="school" />
-          <label for="scales">Среднее образовательное учреждени</label>
-        </div>
+        <label class="checkbox-ios">
+          <input type="checkbox" id="school" name="school" class="byOrgType" />
+          <span class="checkbox-ios-switch"></span>
+          <label for="trosta">Среднее образовательное учреждение</label>
+        </label>
 
-        <div>
-          <input type="checkbox" id="dou" name="dou" />
-          <label for="horns">Дошкольное образовальное учреждение</label>
-        </div>
+        <label class="checkbox-ios">
+          <input type="checkbox" id="dou" name="dou" class="byOrgType" />
+          <span class="checkbox-ios-switch"></span>
+          <label for="trosta">Дошкольное образовальное учреждение</label>
+        </label>
       </fieldset>
 
       <fieldset>
         <legend>По программам</legend>
-        <div>
-          <input type="checkbox" id="trosta" name="trosta" checked/>
-          <label for="horns">Точка роста</label>
-        </div>
 
-        <div>
-          <input type="checkbox" id="scoc" name="scoc" />
-          <label for="horns">Цифровая образовательная среда</label>
-        </div>
+        <label class="checkbox-ios">
+          <input type="checkbox" id="trosta" name="trosta" class="byPropName" />
+          <span class="checkbox-ios-switch"></span>
+          <label for="trosta">Точка роста</label>
+        </label>
 
-        <div>
-          <input type="checkbox" id="kvant" name="kvant" />
-          <label for="horns">Кванториум</label>
-        </div>
+        <label class="checkbox-ios">
+          <input type="checkbox" id="scoc" name="scoc" class="byPropName" />
+          <span class="checkbox-ios-switch"></span>
+          <label for="scoc">Цифровая образовательная среда</label>
+        </label>
 
-        <div>
-          <input type="checkbox" id="itcube" name="it-cube" />
-          <label for="scales">it-куб</label>
-        </div>
+        <label class="checkbox-ios">
+          <input type="checkbox" id="kvant" name="kvant" class="byPropName" />
+          <span class="checkbox-ios-switch"></span>
+          <label for="kvant">Кванториум</label>
+        </label>
 
-        <div>
-          <input type="checkbox" id="masterskaya" name="masterskaya" />
-          <label for="horns">Мастерская</label>
-        </div>
+        <label class="checkbox-ios">
+          <input
+            type="checkbox"
+            id="itcube"
+            name="it-cube"
+            class="byPropName"
+          />
+          <span class="checkbox-ios-switch"></span>
+          <label for="itcube">it-куб</label>
+        </label>
+
+        <label class="checkbox-ios">
+          <input
+            type="checkbox"
+            id="masterskaya"
+            name="masterskaya"
+            class="byPropName"
+          />
+          <span class="checkbox-ios-switch"></span>
+          <label for="masterskaya">Мастерская</label>
+        </label>
       </fieldset>
     </div>
 
     <script>
+      // $(window).keyup(function (e) {
+      //   var target = $(".checkbox-ios input:focus");
+      //   if (e.keyCode == 9 && $(target).length) {
+      //     $(target).parent().addClass("focused");
+      //   }
+      // });
 
+      // $(".checkbox-ios input").focusout(function () {
+      //   $(this).parent().removeClass("focused");
+      // });
     </script>
     <script type="text/javascript" src="http://maps.api.2gis.ru/1.0"></script>
     <script src="https://yastatic.net/jquery/2.2.3/jquery.min.js"></script>
