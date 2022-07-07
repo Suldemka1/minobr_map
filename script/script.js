@@ -53,4 +53,5 @@ DG.then(function () {
     FilterByProperty('itcube', markers, itcube)
     FilterByProperty('masterskaya', markers, masterskaya)
 
+    deleteDouble()
 });

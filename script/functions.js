@@ -257,7 +257,7 @@ function markerInit(type, markerLayer, variable) {                              
     }
 }
 
-function FilterByType(type, markerLayer, variable) {           // добавление обработчика клика на инпуты
+function FilterByType(type, markerLayer, variable) {                                // добавление обработчика клика на инпуты
 
     document.getElementById(type).onchange = function () {
 
@@ -309,7 +309,7 @@ function FilterByProperty(propName, markerLayer, variable) {
     }
 }
 
-function uncheckTypeFilter(propName) {                              // переключение checked у всех byOrgType
+function uncheckTypeFilter(propName) {                                              // переключение checked у всех byOrgType
 
     var uncheck = document.getElementsByClassName('byOrgType');
     var prop = document.getElementById(propName)
@@ -322,7 +322,7 @@ function uncheckTypeFilter(propName) {                              // пере�
     }
 }
 
-function uncheckPropFilter(propName) {                              // переключение checked у всех byPropName
+function uncheckPropFilter(propName) {                                              // переключение checked у всех byPropName
 
     var uncheck = document.getElementsByClassName('byPropName');
     var prop = document.getElementById(propName)
@@ -355,4 +355,14 @@ function iconInit() {
         iconUrl: 'assets/icon.png',
         iconSize: [70, 70]
     })
+}
+
+function deleteDouble() {
+    for (let i = 0; i < orgdata.length; i++) {
+        for (let j = 0; i < orgdata.length; j++) {
+            if (orgdata[i].k1 == orgdata[j].k1 && orgdata[i].k2 == orgdata[j].k2) {
+                console.log('duble  ' + orgdata[i].name + '  ' + orgdata[j].name)
+            }
+        }
+    }
 }

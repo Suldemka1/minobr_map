@@ -1,5 +1,6 @@
 * {
     height: auto;
+    font-family: cursive;
 }
 html,
 body,
@@ -14,6 +15,8 @@ body,
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
+    padding: 20px;
 }
 
 .dg-customization__marker .dg-customization__marker_type_mushroom .leaflet-zoom-animated .leaflet-interactive .dg-customization__marker_disappear {
@@ -106,7 +109,7 @@ fieldset legend {
 	vertical-align: middle;
 	font-size: 14px;
 	user-select: none;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 .checkbox-ios .checkbox-ios-switch {
 	position: relative;	
